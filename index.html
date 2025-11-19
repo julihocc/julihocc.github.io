@@ -38,13 +38,9 @@
             height: 150px;
             border-radius: 50%;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            font-weight: bold;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -119,6 +115,104 @@
             font-size: 1.8em;
         }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 2px solid #ecf0f1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-link:hover {
+            color: #764ba2;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        ul {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 40px 20px;
@@ -142,16 +236,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="profile-image">
-            J
-        </div>
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGf6Hz5kPxPHA/profile-displayphoto-scale_200_200/B4EZeO5a.VHwAY-/0/1750449108476?e=1765411200&v=beta&t=q248YPlJFJrkfY6qLUNvRcQ1fVsvtFx-0nmv0iuYoI4" alt="Juliho's Profile Photo" class="profile-image">
 
         <h1>Juliho</h1>
         <p class="tagline">Program Director, AI Engineering</p>
 
         <p class="bio">
-            Welcome to my professional portfolio! I'm passionate about technology and building innovative solutions.
-            Feel free to connect with me on LinkedIn or check out my projects on GitHub.
+            Professional with a background in applied mathematics and experience in data science. Expert in predictive models, large-scale data analysis, and artificial intelligence. Passionate about solving complex problems and transforming data into actionable insights that drive strategic decision-making. Committed to research and teaching, with experience in supervising theses and graduate programs.
         </p>
 
         <div class="links">
@@ -170,10 +261,115 @@
         </div>
 
         <div class="section">
-            <h2>About This Page</h2>
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Deep Learning</div>
+                <div class="skill-tag">Data Science</div>
+                <div class="skill-tag">AI Engineering</div>
+                <div class="skill-tag">Statistics</div>
+                <div class="skill-tag">Applied Mathematics</div>
+                <div class="skill-tag">Jupyter</div>
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">PyTorch</div>
+                <div class="skill-tag">Rust</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">Predictive Modeling</div>
+                <div class="skill-tag">LaTeX</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Advanced Statistics Course Materials</h3>
+                    <p>Comprehensive course materials for MA2008B with 12 stars. Educational resources covering advanced statistical methods and data science applications.</p>
+                    <a href="https://github.com/julihocc/tec-ma2008b-public" target="_blank" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>COVID-19 Epidemiological Model</h3>
+                    <p>Stochastic discrete dynamical systems model for COVID-19 transmission dynamics. Mathematical modeling for epidemic analysis and prediction.</p>
+                    <a href="https://github.com/julihocc/epydemics" target="_blank" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Pneumonia Detection using CNN</h3>
+                    <p>Deep learning application for medical imaging analysis. Convolutional neural networks for automated pneumonia detection from chest X-rays.</p>
+                    <a href="https://github.com/julihocc/Pneumonia-Detection-using-CNN" target="_blank" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Soccer Analytics Platform</h3>
+                    <p>Data science applications in sports analytics. Educational platform for teaching data analysis through soccer statistics and performance metrics.</p>
+                    <a href="https://github.com/julihocc/prepatec-soccer-analytics" target="_blank" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multivariate Methods in Data Science</h3>
+                    <p>Educational module for MA2003B covering multivariate statistical methods with practical data science applications.</p>
+                    <a href="https://github.com/julihocc/tec-ma2003b-lessons" target="_blank" class="project-link">View Project →</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>LLM Engineering Course</h3>
+                    <p>Materials and implementations for large language model engineering, covering modern AI techniques and applications.</p>
+                    <a href="https://github.com/julihocc/ed-donner-llm" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Research & Teaching</h2>
+            <div class="experience-item">
+                <h3>Educational Leadership</h3>
+                <div class="role">Program Director, AI Engineering</div>
+                <p>Leading AI engineering programs with focus on curriculum development, student mentorship, and academic excellence. Supervising graduate theses and research projects in machine learning and data science.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Course Development</h3>
+                <div class="role">Instructor & Content Creator</div>
+                <p>Developed comprehensive course materials for advanced statistics, multivariate methods, and data science applications. Created educational resources combining theoretical foundations with practical implementations.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Research Focus Areas</h3>
+                <div class="role">Applied Mathematics & AI</div>
+                <p>Active research in predictive modeling, epidemiological modeling, medical imaging analysis with deep learning, and sports analytics. Focus on transforming complex mathematical concepts into actionable insights.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <ul>
+                <li><strong>Data Science:</strong> Predictive modeling, statistical analysis, large-scale data processing, and visualization</li>
+                <li><strong>Artificial Intelligence:</strong> Deep learning, neural networks, computer vision, natural language processing</li>
+                <li><strong>Mathematical Modeling:</strong> Stochastic systems, multivariate analysis, optimization, quantitative methods</li>
+                <li><strong>Software Development:</strong> Python ecosystem, Jupyter notebooks, version control, reproducible research</li>
+                <li><strong>Education:</strong> Curriculum design, thesis supervision, workshop facilitation, educational technology</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Areas of Interest</h2>
+            <ul>
+                <li>Machine Learning & Deep Learning Applications</li>
+                <li>Medical Imaging & Healthcare Analytics</li>
+                <li>Epidemiological Modeling & Public Health</li>
+                <li>Sports Analytics & Performance Optimization</li>
+                <li>Educational Technology & Data Science Pedagogy</li>
+                <li>Quantitative Finance & Risk Analysis</li>
+                <li>Large Language Models & AI Agents</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Connect With Me</h2>
             <p class="bio">
-                This is my personal GitHub page. Here you'll find information about my professional background
-                and links to connect with me. Check back soon for updates on my latest projects and achievements!
+                I'm always interested in collaborating on innovative projects, discussing research opportunities, or connecting with fellow professionals in data science and AI. Feel free to reach out through LinkedIn or explore my repositories on GitHub!
             </p>
         </div>
     </div>
